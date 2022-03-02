@@ -14,7 +14,11 @@ export default class Main extends React.Component {
   render() {
     return (
       <div className="container content">
-        <Movies movies={this.state.movies} />
+        {this.state.movies.length ? (
+          <Movies movies={this.state.movies} />
+        ) : (
+          <h2>Loading ... </h2>
+        )}
       </div>
     );
   }
